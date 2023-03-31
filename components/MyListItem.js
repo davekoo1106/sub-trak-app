@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
-import { View } from 'react-native';
-import { Text, ListItem, Avatar, Button, Overlay } from '@rneui/themed';
+import { View, Text } from 'react-native';
+import { ListItem, Avatar, Button, Overlay } from '@rneui/themed';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
@@ -21,12 +21,12 @@ export default function MyListItem ({ itemData }) {
             />
             
             <ListItem.Content>
-                <Text>{itemData.name}</Text>
+                <Text className="text-blue-900 font-medium">{itemData.name} </Text>
             </ListItem.Content> 
             
             {/* Setting the button */}
             <Button 
-                color={'#4146ff'}
+                color={'#1e3a8a'}
                 icon= {{
                     name: 'add-circle',
                     type: 'ionicon',

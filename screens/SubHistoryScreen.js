@@ -1,8 +1,10 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { View, Text, Image, Button } from 'react-native';
 import { getUserSubscriptionById } from '../data/user-subscription-data';
 
 export default function SubHistoryScreen ({ route, navigation }) {
+
+    // Delete subscription upon clicking on 'cancel subscription' 
 
     const { itemId } = route.params;
     const network_data = getUserSubscriptionById(itemId);
@@ -24,13 +26,16 @@ export default function SubHistoryScreen ({ route, navigation }) {
                 source={network_data.img}
                 />
             </View>
-            <Text className="text-4xl">{network_data.name }</Text>
+            <Text className="text-4xl">{network_data.name}</Text>
             <View className="flex-2 flex-row pb-5">
                 <Text className="text-gray-600 pr-1">Next payment</Text>
-                <Text className="text-blue-700">Feb 24 2023</Text>
+                <Text className="text-blue-900">Feb 24 2023</Text>
             </View>
             <View className="flex-1">
-                <Button className="" color="#4146ff" title='Cancel Subscription'/>
+                <Button 
+                
+                color="#4146ff" 
+                title='Cancel Subscription'/>
             </View>
 
             {/* History of payments List */}

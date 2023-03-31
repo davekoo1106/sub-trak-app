@@ -15,6 +15,7 @@ import SubAddScreen from './screens/SubAddScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import AddCardScreen from './screens/AddCardScreen';
 
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
@@ -53,7 +54,7 @@ function HistoryStackScreen() {
           component={SubDetailScreen}
           options={{headerShown: false}}
         />
-        <HistoryStack.Screen 
+        <HistoryStack.Screen  
           name="History"
           component={SubHistoryScreen}
           options={{ headerShown: false }}

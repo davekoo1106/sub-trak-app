@@ -1,4 +1,4 @@
-// import { useNavigation } from '@react-navigation/native';
+
 import { useLayoutEffect } from 'react';
 import { StyleSheet, View, Text, Button, Image, SafeAreaView, FlatList } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -13,22 +13,47 @@ export default function HomeScreen ({ navigation }) {
 
     return ( 
 
-            <SafeAreaView style={styles.container}>
-                <Text className="text-4xl mt-6 mb-3 pt-7">Welcome, User</Text>
-                <Text style={styles.subheading}>Your cards</Text>
-                <Image style={styles.heroImage} 
+            <SafeAreaView className="bg-white">
+                <View className="flex flex-row justify-between items-center px-8 pt-16 pb-6">
+                    <View>
+                        <Text className="text-3xl font-medium text-blue-900">Hello, Bryan!</Text>
+                    </View>
+                    <View>
+                        <Image 
+                            className="w-[50px] h-[50px] rounded-full"
+                            source={require('../assets/headshot.jpg')}
+                        />
+                    </View>
+                </View>
+                <View>
+                    <Text className="text-blue-900 font-medium text-lg pl-10 mb-5">Your cards</Text>
+                </View>
+                <View>
+                    
+                </View>
+                <View className="flex items-center">
+                    <Image  
+                    className="w-[330px] h-[210px] z-10 mt-10 drop-shadow-lg"
                     source={require('../assets/mastercard.png')}
-                />
+                    />
+                    <View className="w-[330px] bottom-[250px] rounded-md bg-blue-900 z-9 flex flex-row justify-between">
+                        <Text className="text-white text-lg p-2 font-medium h-20">**** 8942</Text>
+                        <Text className="text-white text-lg p-2 font-medium h-20">Exp. 11/24</Text>
+                    </View>
+                </View>
                 {/* End Header */}
 
-                <View className="flex-1 flex-row items-center  pt-16">
-                    <Text className="pr-24">Recent subscriptions</Text>
-                    <Text 
-                        onPress={() => navigation.navigate('Statistics')}>
-                        View All
-                    </Text> 
-                    <View className="p-1">
-                        <Ionicons name="arrow-forward-outline" size={18}/>
+                <View className="flex flex-row items-center m-[-10px]">
+                    <Text className="pr-24 text-blue-900 text-lg font-bold flex-1 text-center">Recent subscriptions</Text>
+                    <View className="flex flex-row pr-5">
+                        <Text 
+                            className="text-blue-900 font-bold"
+                            onPress={() => navigation.navigate('Statistics')}>
+                            View All
+                        </Text> 
+                        <View className="pr-3">
+                            <Ionicons name="arrow-forward-outline" size={18} color={'#1E3A8A'}/>
+                        </View>
                     </View>
                 </View>
 
@@ -36,7 +61,8 @@ export default function HomeScreen ({ navigation }) {
                 {/* End Title */}
 
                 {/* Creating the list that displays recent subscriptions on the home page  */}
-                <View className="flex-row pb-4">
+            
+                <View className="flex-row pb-3 pt-3 rounded-lg m-0.5">
                     <View className="flex-none pl-10 pt-1"> 
                         <Image  
                         source={require('../assets/netflix-32.png')}
@@ -44,29 +70,29 @@ export default function HomeScreen ({ navigation }) {
                     </View>
                     <View className="flex-auto pl-2">
                         <Text className="text-gray-400">Jan 1</Text>
-                        <Text>Netflix</Text>
+                        <Text className="text-blue-900 font-medium">Netflix</Text>
                     </View>
                     <View className="pr-10">
-                        <Text>$12.99</Text>
+                        <Text className="text-blue-900 font-medium">$12.99</Text>
                         <Text className="text-gray-400">/month</Text>
                     </View>
                 </View>
-                <View className="flex-row pb-4">
+                <View className="flex-row pb-3 pt-3 rounded-lg m-0.5">
                     <View className="flex-none pl-10 pt-1"> 
                         <Image  
                         source={require('../assets/spotify-32.png')}
                         />
                     </View>
-                    <View className="flex-auto pl-2">
+                    <View className="flex-auto pl-2 rounded-lg">
                         <Text className="text-gray-400">Jan 2</Text>
-                        <Text>Spotify</Text>
+                        <Text className="text-blue-900 font-medium">Spotify</Text>
                     </View>
                     <View className="pr-10">
-                        <Text>$16.99</Text>
+                        <Text className="text-blue-900 font-medium">$16.99</Text>
                         <Text className="text-gray-400">/month</Text>
                     </View>
                 </View>
-                <View className="flex-row pb-4">
+                <View className="flex-row pb-3 pt-3 rounded-lg m-0.5">
                     <View className="flex-none pl-10 pt-1"> 
                         <Image  
                         source={require('../assets/amazon-32.png')}
@@ -74,14 +100,14 @@ export default function HomeScreen ({ navigation }) {
                     </View>
                     <View className="flex-auto pl-2">
                         <Text className="text-gray-400">Jan 4</Text>
-                        <Text>Amazon</Text>
+                        <Text className="text-blue-900 font-medium">Amazon</Text>
                     </View>
                     <View className="pr-10">
-                        <Text>$9.99</Text>
+                        <Text className="text-blue-900 font-medium">$9.99</Text>
                         <Text className="text-gray-400">/month</Text>
                     </View>
                 </View>
-                <View className="flex-row pb-4">
+                <View className="flex-row pb-3 pt-3 rounded-lg m-0.5">
                     <View className="flex-none pl-10 pt-1"> 
                         <Image  
                         source={require('../assets/youtube-32.png')}
@@ -89,14 +115,14 @@ export default function HomeScreen ({ navigation }) {
                     </View>
                     <View className="flex-auto pl-2">
                         <Text className="text-gray-400">Jan 5</Text>
-                        <Text>Youtube</Text>
+                        <Text className="text-blue-900 font-medium">Youtube</Text>
                     </View>
                     <View className="pr-10">
-                        <Text>$12.99</Text>
+                        <Text className="text-blue-900 font-medium">$12.99</Text>
                         <Text className="text-gray-400">/month</Text>
                     </View>
                 </View>
-                <View className="flex-row pb-4">
+                <View className="flex-row pb-3 pt-3 rounded-lg m-0.5">
                     <View className="flex-none pl-10 pt-1"> 
                         <Image  
                         source={require('../assets/shopify-32.png')}
@@ -104,51 +130,13 @@ export default function HomeScreen ({ navigation }) {
                     </View>
                     <View className="flex-auto pl-2">
                         <Text className="text-gray-400">Jan 6</Text>
-                        <Text>Shopify</Text>
+                        <Text className="text-blue-900 font-medium">Shopify</Text>
                     </View>
                     <View className="pr-10"> 
-                        <Text>$32.99</Text>
+                        <Text className="text-blue-900 font-medium">$32.99</Text>
                         <Text className="text-gray-400">/month</Text>
                     </View>
                 </View>
             </SafeAreaView>
     );
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        textAlign: 'left',
-        justifyContent: 'flex-start',
-        marginBottom: 10, 
-        padding: 25,
-    }, 
-    subheading: {
-        fontSize: 20,
-        marginLeft: 30,
-        marginBottom: 20,
-    },
-    heroImage: {
-        width: 330,
-        height: 210,
-    },
-    textBox: {
-        backgroundColor: '#c0c0c0',
-        marginTop: 40,
-        borderRadius: 10,
-    },
-
-    textboxitems: {
-        fontSize: 17,
-        justifyContent: 'flex-start',
-    },
-    textboxbutton: {
-        flex: 1,
-        color: '#0E4C92',
-        fontSize: 15,
-        textAlign: 'center',
-    }
-
-})

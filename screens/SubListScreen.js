@@ -1,12 +1,12 @@
 import { useLayoutEffect, useState } from 'react';
-import { StyleSheet, View, TextInput, FlatList, SafeAreaView, Button } from 'react-native';
+import { StyleSheet, View, TextInput, FlatList, SafeAreaView, Button, Text } from 'react-native';
 
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MyListItem from '../components/MyListItem';
 
 import { getSubscriptionData } from '../data/subscription-data';
-import { Text } from '@rneui/themed';
+// import { Text } from '@rneui/themed';
 
 
 export default function SubListScreen ({ navigation }) {
@@ -24,11 +24,12 @@ export default function SubListScreen ({ navigation }) {
 
 
     return ( 
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.header}>Add Subscription</Text>
-            <View style={styles.searchbar}>
-                <Ionicons style={styles.searchicon} name="search" size={20} color="grey"/>
+        <View className="bg-white flex-1 items-center justify-center pt-20">
+            <Text className="text-2xl text-blue-900 mb-5">Add Subscription</Text>
+            <View className="bg-white border-2 border-blue-900 flex-1 flex-row items-center w-[220px] max-h-[35px] pl-2 rounded-lg">
+                <Ionicons name="search" size={20} color={'#1E3A8A'}/>
                     <TextInput
+                        className="pl-2"
                         placeholder='Search by company'
                         keyboardType='default'
                     />
@@ -40,44 +41,6 @@ export default function SubListScreen ({ navigation }) {
                     keyExtractor={item => item.id}
                 />
             </View>
-        </SafeAreaView>
+        </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        textAlign: 'left',
-        justifyContent: 'flex-start',
-        marginBottom: 30,
-        width: '100%',
-        paddingTop: 60,
-    }, 
-    header: {
-        fontSize: 30,
-        paddingBottom: 10,
-    },
-    searchbar: {
-        backgroundColor: '#d3d3d3',
-        flex: 1,
-        flexDirection: 'row',
-        width: 210,
-        maxHeight: 35,
-        alignItems: 'center', 
-        borderRadius: 8,
-    },
-    searchicon: {
-        paddingRight: 20,
-        paddingLeft: 10,
-    },
-    item: {
-        backgroundColor: 'black',
-        padding: 40, 
-        marginVertical: 20,
-    },  
-    title: {
-        fontSize: 15,
-        margin: 5,
-    },
-})

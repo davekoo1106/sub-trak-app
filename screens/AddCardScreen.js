@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
 import { TextInput, View, Text, Button, Modal, Pressable, Alert} from 'react-native';
 
+
 export default function AddCardScreen({ navigation }) {
 
     //Setting a new variable state and calling it modalVisible. 
@@ -61,12 +62,16 @@ export default function AddCardScreen({ navigation }) {
             {/* When the modal is clicked it will show an alert that states that the card has been added  */}
             <View>
                 <Modal
-                visible={modalVisible}
-                animationType='fade'
-                onShow={() => {
+                    visible={modalVisible}
+                    animationType='fade'
+                    // onClick={addNewCard}
+                    onShow={() => {
                     Alert.alert('Card has been added');
                     setModalVisible(!modalVisible);
-                    navigation.navigate("Add Card");
+                    navigation.navigate("Add Card", {
+                        loopImage: 2
+
+                    });
                 }}>
                 </Modal>
             </View>

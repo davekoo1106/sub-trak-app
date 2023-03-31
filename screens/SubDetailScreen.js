@@ -29,29 +29,31 @@ export default function SubDetailScreen({ navigation }) {
                     </View>
                     <View className="flex-auto pl-2">
                         <Text className="text-gray-400">{item['date']}</Text>
-                        <Text>{ item['name'] }</Text>
+                        <Text className="text-blue-900 font-medium">{ item['name'] }</Text>
                     </View>
                     <View>
-                        <Text>{item['price']}</Text>
+                        <Text className="text-blue-900 font-medium">{item['price']}</Text>
                         <Text className="text-gray-400">{item['renewal_type']}</Text>
                     </View>
+                    
                 </TouchableOpacity>
     );    
 
 
 
     return (
-        <View className="flex-column justify-center items-center mt-40">
-            <View className="items-center">
-                <Text className="text-3xl mb-7">Subscriptions</Text>
-                <Text className="text-5xl mb-4">$ 310.00</Text> 
+        <View className="flex-1 flex-column justify-center items-center bg-white pt-36">
+            <View>
+                <Text className="text-3xl mb-7 text-blue-900 font-medium text-center">Subscriptions</Text>
+                <Text className="text-5xl text-blue-900 font-medium">$ 310.00</Text> 
             </View>
             <View className="flex-row my-2">
                 <Text className="text-gray-600 pr-1">Spending &bull;</Text>
                 <Text className="text-gray-600">Jan 2023</Text>
             </View>
-            <View className="flex-row p-7 mt-20">
-                <Text className="flex-1 pl-4 text-lg">Your Subscriptions</Text>
+
+            <View className="flex-row p-7 ">
+                <Text className="flex-1 pl-4 text-lg text-blue-900 font-medium ">Your Subscriptions</Text>
                 <View className="">
                     <Button 
                         icon={
@@ -59,7 +61,7 @@ export default function SubDetailScreen({ navigation }) {
                         />
                         }
                         title="This month" 
-                        color={"#4146ff"} 
+                        color={"#1E3A8A"} 
                     />
                 </View>
             </View>
@@ -70,83 +72,6 @@ export default function SubDetailScreen({ navigation }) {
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
             />
-
-                {/* End Title */}
-                {/* <TouchableOpacity className="flex-row pt-2 pb-4" onPress={() => navigation.navigate("History")}>
-                    <View className="flex-none pl-10 pt-1">
-                        <Image
-                        source={require('../assets/netflix-32.png')}
-                        />
-                    </View>
-                    <View className="flex-auto pl-2">
-                        <Text className="text-gray-400">Jan 24</Text>
-                        <Text>Netflix Family Plan</Text>
-                    </View>
-                    <View className="pr-10">
-                        <Text>- $12.99</Text>
-                        <Text className="text-gray-400">/month</Text>
-                    </View>
-                </TouchableOpacity>
-                <View className="flex-row pb-4">
-                    <View className="flex-none pl-10 pt-1"> 
-                        <Image  
-                        source={require('../assets/spotify-32.png')}
-                        />
-                    </View>
-                    <View className="flex-auto pl-2">
-                        <Text className="text-gray-400">Jan 2</Text>
-                        <Text >Spotify Premium</Text>
-                    </View>
-                    <View className="pr-10">
-                        <Text>- $16.99</Text>
-                        <Text className="text-gray-400">/month</Text>
-                    </View>
-                </View>
-                <View className="flex-row pb-4">
-                    <View className="flex-none pl-10 pt-1"> 
-                        <Image  
-                        source={require('../assets/amazon-32.png')}
-                        />
-                    </View>
-                    <View className="flex-auto pl-2">
-                        <Text className="text-gray-400">Jan 4</Text>
-                        <Text>Amazon Prime</Text>
-                    </View>
-                    <View className="pr-10">
-                        <Text>- $9.99</Text>
-                        <Text className="text-gray-400">/month</Text>
-                    </View>
-                </View>
-                <View className="flex-row pb-4">
-                    <View className="flex-none pl-10 pt-1"> 
-                        <Image  
-                        source={require('../assets/youtube-32.png')}
-                        />
-                    </View>
-                    <View className="flex-auto pl-2">
-                        <Text className="text-gray-400">Jan 5</Text>
-                        <Text>Youtube Premium</Text>
-                    </View>
-                    <View className="pr-10">
-                        <Text>- $12.99</Text>
-                        <Text className="text-gray-400">/month</Text>
-                    </View>
-                </View>
-                <View className="flex-row pb-4">
-                    <View className="flex-none pl-10 pt-1"> 
-                        <Image  
-                        source={require('../assets/shopify-32.png')}
-                        />
-                    </View>
-                    <View className="flex-auto pl-2">
-                        <Text className="text-gray-400">Jan 6</Text>
-                        <Text>Shopify Plus</Text>
-                    </View>
-                    <View className="pr-10"> 
-                        <Text>- $32.99</Text>
-                        <Text className="text-gray-400">/month</Text>
-                    </View>
-                </View> */}
         </View>
     );
 }
