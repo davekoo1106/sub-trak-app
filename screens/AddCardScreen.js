@@ -69,7 +69,7 @@ export default function AddCardScreen({ navigation }) {
                     Alert.alert('Card has been added');
                     setModalVisible(!modalVisible);
                     navigation.navigate("Add Card", {
-                        loopImage: 2
+                        loopImage: 2  
 
                     });
                 }}>
