@@ -70,7 +70,6 @@ export default function AddCardScreen({ navigation }) {
                     setModalVisible(!modalVisible);
                     navigation.navigate("Add Card", {
                         loopImage: 2  
-
                     });
                 }}>
                 </Modal>

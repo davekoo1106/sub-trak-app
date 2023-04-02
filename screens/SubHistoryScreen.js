@@ -4,8 +4,6 @@ import { getUserSubscriptionById } from '../data/user-subscription-data';
 
 export default function SubHistoryScreen ({ route, navigation }) {
 
-    // Delete subscription upon clicking on 'cancel subscription' 
-
     const { itemId } = route.params;
     const network_data = getUserSubscriptionById(itemId);
 
